@@ -17,7 +17,7 @@ x_test   = x_test.astype('float32')/255.
 # aplanado de imágenes de 28x28 a vector de 784 
 
 x_train = x_train.reshape((len(x_train),784))
-x_test = x_test.reshape*((len(x_test),784))
+x_test = x_test.reshape((len(x_test),784))
 
 # 3. Diseño del modelo
 
@@ -57,12 +57,12 @@ autoencoder.compile(optimizer='adam', loss='binary_crossentropy',metrics=['mse']
 
 print("Iniciando entrenamiento de autoencoder")
 
-autoencoder.fit(x_train, x_train
-                epochs =10,
+autoencoder.fit(x_train, x_train,
+                epochs =30,
                 batch_size=256,
                 shuffle=True,
                 validation_data=(x_test, x_test))
 
 #5. MLOps: guardar solo el encoder para la etapa 2
-encoder.save('mi_encoder.h5')
-print("Enconder guardado como 'mi_enconder.h5'")
+encoder.save('encoder_final.h5')
+print("Enconder guardado como 'encoder_final.h5'")
